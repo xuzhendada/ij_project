@@ -18,6 +18,9 @@ fun main() {
     "Iphone.com"{
         println(it)
     }
+    e {
+        println(it)
+    }
 }
 
 fun a(b: Boolean, callback: (Boolean) -> Unit = {}) {
@@ -43,7 +46,10 @@ fun d(b: Boolean, callback: () -> Unit) {
     }
 }
 
-
 inline operator fun String.invoke(block: (String) -> Unit) {
     block(this)
+}
+
+fun e(block: (String) -> Unit) {
+    block.invoke("a")
 }
