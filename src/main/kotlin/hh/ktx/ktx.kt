@@ -38,7 +38,7 @@ fun e(block: (String) -> Unit) {
     block.invoke("a")
 }
 
-inline fun Long.f(): String = DecimalFormat(",###").format(this)
+fun Long.f(): String = DecimalFormat(",###").format(this)
 
 fun getString(a: MutableList<String>, strategy: Strategy): String {
     return strategy.getString(a)
