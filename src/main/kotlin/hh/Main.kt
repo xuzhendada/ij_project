@@ -1,5 +1,9 @@
 package hh
 
+import hh.ktx.*
+import hh.strategy.Strategy1
+import hh.strategy.Strategy2
+
 fun main() {
     a(true) {
         println(it)
@@ -21,35 +25,7 @@ fun main() {
     e {
         println(it)
     }
-}
-
-fun a(b: Boolean, callback: (Boolean) -> Unit = {}) {
-    if (b) {
-        callback.invoke(b)
-    } else {
-        println("$b")
-    }
-}
-
-fun b(callback: (a: Int, b: Int) -> Unit) {
-    callback.invoke(1, 2)
-}
-
-fun c(a: (Int) -> Unit, callback: (String, Int) -> Unit) {
-    a.invoke(2)
-    callback.invoke("c", 2)
-}
-
-fun d(b: Boolean, callback: () -> Unit) {
-    if (b) {
-        callback.invoke()
-    }
-}
-
-inline operator fun String.invoke(block: (String) -> Unit) {
-    block(this)
-}
-
-fun e(block: (String) -> Unit) {
-    block.invoke("a")
+    println(10000000000000L.f())
+    println(getString(mutableListOf("a", "b", "c"), Strategy1()))
+    println(getString(mutableListOf("a", "b", "c"), Strategy2()))
 }
