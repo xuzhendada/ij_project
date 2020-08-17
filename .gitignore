@@ -11,4 +11,4 @@ gen
 src/main/resources/
 src/test/
 /.idea
-.gradle
+/.gradle
