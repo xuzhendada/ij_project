@@ -8,7 +8,7 @@
 out
 gen
 /build
-.gradle/6.3/vcsMetadata-1/
-.gradle/6.5/vcsMetadata-1/
 src/main/resources/
 src/test/
+/.idea
+.gradle
