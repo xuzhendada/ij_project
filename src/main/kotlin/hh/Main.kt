@@ -1,5 +1,6 @@
 package hh
 
+import dsl.dsl
 import hh.ktx.*
 import hh.strategy.Strategy1
 import hh.strategy.Strategy2
@@ -39,5 +40,15 @@ fun main() {
 
     array.forEachIndexed { index, i ->
         print("$index _ $i ")
+    }
+    println()
+    //dsl写法
+    dsl(false) {
+        onOk {
+            println(array)
+        }
+        onCancel {
+            print(it)
+        }
     }
 }
