@@ -34,6 +34,10 @@ inline operator fun String.invoke(block: (String) -> Unit) {
     block(this)
 }
 
+inline operator fun Int.invoke(block: (Int) -> Unit) {
+    block(this - 1)
+}
+
 fun e(block: (String) -> Unit) {
     block.invoke("a")
 }
@@ -42,4 +46,9 @@ fun Long.f(): String = DecimalFormat(",###").format(this)
 
 fun getString(a: MutableList<String>, strategy: Strategy): String {
     return strategy.getString(a)
+}
+
+fun Int.getMinute() = when (this) {
+    in 0..60 -> 1
+    else -> this / 60 + if (this % 60 >= 30) 1 else 0
 }
